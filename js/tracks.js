@@ -122,47 +122,46 @@ window.TRACKS = [
   }
 ];
 {
-  title: "Sei La Mia Ispirazione",
-  artist: "Italiano per cantare",
-  mood: "romantico / sognante",
-  description: "Una melodia che nasce dall'insonnia e diventa emozione pura.",
-  image: "assets/images/ispirazione.jpg",
-  audio: "assets/audio/ispirazione.mp3",
-  lyrics: `
-Nell'insonnia della notte,
-penso a te, e tu arrivi,
-in una melodia magica,
-dolcemente mi rapisci.
+  title: "Amore mio",
+  artist: "Italiano Mood",
+  mood: "Romantico",
+  description: "Una notte sotto le stelle, due anime unite.",
+  image: "assets/images/amore_mio.jpg",
+  audio: "assets/audio/amoremio.mp3",
+  lyrics: `Amore mio
 
-Sei la mia ispirazione,
-musica ed emozione,
-carezzo il tuo corpo
-in note e armonia.
-Poi svanisci piano,
-ma resti lontano,
-nutrendo l'anima mia.
+Quando la notte avvolge il mondo,
+E la luna danza in cielo, alto e rotondo,
+Camminiamo insieme, mano nella mano,
+Sotto un mare di stelle, noi due, lontani.
 
-Vieni, danzi tra le stelle,
-un sogno che non finisce,
-la tua voce è un vento caldo,
-che il mio cuore accende e dice...
+Oh, amore mio, nel silenzio parlo,
+Ogni stella brilla, riflette il tuo sguardo,
+In questo abbraccio, sento il tuo calore,
+Siamo due anime, un solo cuore.
 
-Sei la mia ispirazione,
-musica ed emozione,
-carezzo il tuo corpo
-in note e armonia.
-Poi svanisci piano,
-ma resti lontano,
-nutrendo l'anima mia.
+Le ombre sussurrano storie d'amore,
+Mentre danziamo al ritmo del cuore,
+Ogni attimo è un sogno che resta,
+Con te al mio fianco, ogni paura è festa.
 
-E quando l'alba sorride,
-tu ti nascondi nel sole,
-ma la tua canzone è vita,
-è fuoco che non muore...
+Oh, amore mio, nel silenzio parlo,
+Ogni stella brilla, riflette il tuo sguardo,
+In questo abbraccio, sento il tuo calore,
+Siamo due anime, un solo cuore.
 
-Sei la mia ispirazione,
-eterna melodia,
-anche se sei solo un sogno,
-vivi nella poesia.
-`
+E quando l'orizzonte si tinge di blu,
+Prometto che sempre sarò qui per te,
+In questo viaggio, insieme, senza fretta,
+Sotto le stelle, la vita è perfetta.
+
+Oh, amore mio, nel silenzio parlo,
+Ogni stella brilla, riflette il tuo sguardo,
+In questo abbraccio, sento il tuo calore,
+Siamo due anime, un solo cuore.
+
+Sotto le stelle, ci perderemo,
+In un universo, solo noi saremo,
+Fino all'ultima luce, rimarremo qui,
+In questo sogno, siamo solo noi.`
 }
