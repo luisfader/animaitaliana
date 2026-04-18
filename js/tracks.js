@@ -121,3 +121,48 @@ window.TRACKS = [
     "duration_seconds": 147.1
   }
 ];
+{
+  title: "Sei La Mia Ispirazione",
+  artist: "Italiano per cantare",
+  mood: "romantico / sognante",
+  description: "Una melodia che nasce dall'insonnia e diventa emozione pura.",
+  image: "assets/images/ispirazione.jpg",
+  audio: "assets/audio/ispirazione.mp3",
+  lyrics: `
+Nell'insonnia della notte,
+penso a te, e tu arrivi,
+in una melodia magica,
+dolcemente mi rapisci.
+
+Sei la mia ispirazione,
+musica ed emozione,
+carezzo il tuo corpo
+in note e armonia.
+Poi svanisci piano,
+ma resti lontano,
+nutrendo l'anima mia.
+
+Vieni, danzi tra le stelle,
+un sogno che non finisce,
+la tua voce è un vento caldo,
+che il mio cuore accende e dice...
+
+Sei la mia ispirazione,
+musica ed emozione,
+carezzo il tuo corpo
+in note e armonia.
+Poi svanisci piano,
+ma resti lontano,
+nutrendo l'anima mia.
+
+E quando l'alba sorride,
+tu ti nascondi nel sole,
+ma la tua canzone è vita,
+è fuoco che non muore...
+
+Sei la mia ispirazione,
+eterna melodia,
+anche se sei solo un sogno,
+vivi nella poesia.
+`
+}
