@@ -118,8 +118,7 @@ window.TRACKS = [
     "image": "assets/images/amore_mio.jpg",
     "audio": "assets/audio/amoremio.mp3",
     "lyrics": "Amore mio\n\nQuando la notte avvolge il mondo,\nE la luna danza in cielo, alto e rotondo,\nCamminiamo insieme, mano nella mano,\nSotto un mare di stelle, noi due, lontani.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nLe ombre sussurrano storie d'amore,\nMentre danziamo al ritmo del cuore,\nOgni attimo è un sogno che resta,\nCon te al mio fianco, ogni paura è festa.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nE quando l'orizzonte si tinge di blu,\nPrometto che sempre sarò qui per te,\nIn questo viaggio, insieme, senza fretta,\nSotto le stelle, la vita è perfetta.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nSotto le stelle, ci perderemo,\nIn un universo, solo noi saremo,\nFino all'ultima luce, rimarremo qui,\nIn questo sogno, siamo solo noi."
-  }, 
-  ,
+  },
 {
   title: "Ti amo in silenzio",
   artist: "Italiano Mood",
@@ -151,5 +150,83 @@ E io resto qui, per te ad aspettare.
 
 Ti amo in silenzio... ti adoro...
 Ti aspetto...`
+},
+{
+  title: "Maschera di Venezia",
+  artist: "Italiano Mood",
+  mood: "Misterioso",
+  description: "Tra maschere, ponti e segreti, Venezia diventa un sogno sospeso tra verità e desiderio.",
+  image: "assets/images/maschera.jpg",
+  audio: "assets/audio/maschera.mp3",
+  lyrics: `[Verse 1]
+Lei cammina lenta sopra l’acqua scura
+Capelli al vento, antica come una figura
+Vestita di notte, di stelle e segreti
+Sembra un sogno perso tra mille riflessi
+
+Occhi azzurri come il cielo sul mare
+Nasconde verità che non puoi toccare
+Tra le maschere danza senza rumore
+Ma dentro il silenzio le brucia il cuore
+
+[Pre-Chorus]
+E lui la guarda senza capire
+Se è destino… o da fuggire
+
+[Chorus]
+Oh, Natalia di Venezia
+Cuore che non mente mai
+Tra le ombre e la bellezza
+Dimmi dove mi porterai
+
+Maschera e verità
+Si confondono tra di noi
+Se ti perdo nella città
+Non mi ritroverò mai più
+
+[Verse 2]
+Pioggia leggera sui ponti deserti
+Passi che cercano mondi coperti
+Sotto la maschera un dolce respiro
+Due anime perse nello stesso destino
+
+Lei non parla, ma sa già tutto
+Ogni segreto, ogni dolore distrutto
+E quando lo sfiora, il tempo si spezza
+Venezia trattiene ogni carezza
+
+[Pre-Chorus]
+E lui si perde senza scampo
+Tra un sogno e un incanto
+
+[Chorus]
+Oh, Natalia di Venezia
+Cuore che non mente mai
+Tra le ombre e la bellezza
+Dimmi dove mi porterai
+
+Maschera e verità
+Si confondono tra di noi
+Se ti perdo nella città
+Non mi ritroverò mai più
+
+[Bridge]
+Non sei un’ombra… non sei reale
+Sei il segreto di questo carnevale
+Se ti amo, rischio di cadere
+Ma senza te non so vivere
+
+[Break / Instrumental]
+
+[Final Chorus – più intenso]
+Oh, Natalia di Venezia
+Fiamma che non morirà
+Tra la notte e la dolcezza
+Sei la mia eternità
+
+Maschera e verità
+Ora non esistono più
+Se mi perdo dentro te
+Io mi perdo… ma sei tu`
 }
 ];
