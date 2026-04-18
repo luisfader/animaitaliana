@@ -1,29 +1,119 @@
-<p class="lead">
-Ascoltare, leggere e cantare. Ogni canzone apre un’immagine diversa e lo spettro pulsa sopra la miniatura visiva del brano.
-</p>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Итальянское настроение</title>
+  <meta name="description" content="Esperienza musicale offline per ascoltare, leggere e cantare in italiano.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg">
+    <img id="bgImage" src="assets/images/album-cover.jpg" alt="">
+    <div class="bg-overlay"></div>
+  </div>
 
-<button id="focusBtn" class="btn">Modalità focus</button>
-<button id="togglePlaylistBtn" class="btn">Playlist</button>
+  <div class="page">
+    <header class="hero glass">
+      <div class="hero-copy">
+        <p class="eyebrow">universo musicale · ascoltare · leggere · cantare</p>
+        <h1>Итальянское настроение</h1>
+        <p class="hero-text">Ogni canzone cambia immagine, atmosfera e testo. Il visualizzatore audio turchese pulsa sopra la miniatura del brano.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="focusBtn" class="ui-btn">Modalità focus</button>
+        <button id="togglePlaylistBtn" class="ui-btn">Playlist</button>
+      </div>
+    </header>
 
-<p class="eyebrow">in riproduzione</p>
+    <main class="layout">
+      <section class="main-col">
+        <section class="now glass">
+          <p class="eyebrow">in riproduzione</p>
+          <h2 id="trackTitle">—</h2>
+          <p id="trackMood" class="mood">—</p>
+          <p id="trackDescription" class="desc">—</p>
+          <div class="meta-row">
+            <div class="meta-pill"><span>artista</span><strong id="trackArtist">Luis Fader</strong></div>
+            <div class="meta-pill"><span>brano</span><strong id="trackIndexLabel">01 / 11</strong></div>
+            <div class="meta-pill"><span>stato</span><strong id="statusLabel">Pronto</strong></div>
+          </div>
+        </section>
 
-<div class="meta-pill"><span>artista</span></div>
-<div class="meta-pill"><span>brano</span></div>
-<div class="meta-pill"><span>stato</span></div>
+        <section class="lyrics glass">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">testo</p>
+              <h3>Testo della canzone</h3>
+            </div>
+            <button id="wideLyricsBtn" class="ui-btn small">Lettura ampia</button>
+          </div>
+          <div id="lyricsText" class="lyrics-content"></div>
+        </section>
+      </section>
 
-<p class="eyebrow">testo</p>
-<h3>Testo della canzone</h3>
-<button id="wideLyricsBtn" class="btn btn--small">Lettura ampia</button>
+      <aside class="side-col">
+        <section class="art glass">
+          <div class="section-head tight">
+            <div>
+              <p class="eyebrow">miniatura visiva</p>
+              <h3>Immagine del brano</h3>
+            </div>
+          </div>
+          <div class="art-frame">
+            <img id="coverImage" class="cover-image" src="assets/images/album-cover.jpg" alt="Immagine del brano attuale">
+            <canvas id="spectrumCanvas" class="spectrum"></canvas>
+          </div>
+          <div class="art-meta">
+            <strong id="artTitle">—</strong>
+            <span id="artArtist">Luis Fader</span>
+          </div>
+        </section>
+      </aside>
+    </main>
 
-<p class="eyebrow">miniatura visiva</p>
-<h3>Immagine del brano</h3>
+    <aside id="playlistPanel" class="playlist glass">
+      <div id="playlistHandle" class="playlist-head">
+        <div>
+          <p class="eyebrow">playlist</p>
+          <h3>11 canzoni</h3>
+        </div>
+        <button id="collapsePlaylistBtn" class="ui-btn small">Nascondi</button>
+      </div>
+      <ol id="playlistList" class="playlist-list"></ol>
+    </aside>
 
-<p class="eyebrow">playlist</p>
-<h3>11 canzoni</h3>
+    <footer class="player glass">
+      <div class="player-track">
+        <span class="led"></span>
+        <div>
+          <strong id="dockTitle">—</strong>
+          <small id="dockArtist">Luis Fader</small>
+        </div>
+      </div>
 
-<button id="collapsePlaylistBtn" class="btn btn--small">Nascondi</button>
+      <div class="player-controls">
+        <button id="prevBtn" class="ui-btn icon" aria-label="Precedente">⟨⟨</button>
+        <button id="playBtn" class="ui-btn play" aria-label="Riproduci">▶</button>
+        <button id="nextBtn" class="ui-btn icon" aria-label="Successivo">⟩⟩</button>
+      </div>
 
-<button id="prevBtn">⟨⟨</button>
-<button id="nextBtn">⟩⟩</button>
+      <div class="player-progress">
+        <span id="currentTime">0:00</span>
+        <input id="progressBar" type="range" min="0" max="100" value="0" step="0.1">
+        <span id="durationTime">0:00</span>
+      </div>
 
-<label for="volumeBar">Volume</label>
+      <div class="player-volume">
+        <label for="volumeBar">Volume</label>
+        <input id="volumeBar" type="range" min="0" max="1" value="0.9" step="0.01">
+        <button id="muteBtn" class="ui-btn icon" aria-label="Disattiva audio">🔊</button>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="audio" preload="metadata" crossorigin="anonymous"></audio>
+  <script src="js/tracks.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

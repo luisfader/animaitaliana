@@ -35,7 +35,7 @@
     collapsePlaylistBtn: $('collapsePlaylistBtn')
   };
 
-  const key = 'italian_mood_site_state_v3';
+  const key = 'italian_mood_site_state_v4';
   const state = {
     index: 0,
     volume: 0.9,
@@ -63,7 +63,7 @@
       if (typeof s.wantsPlay === 'boolean') state.wantsPlay = s.wantsPlay;
       if (typeof s.playlistHidden === 'boolean') state.playlistHidden = s.playlistHidden;
       if (s.playlistPos && typeof s.playlistPos === 'object') state.playlistPos = s.playlistPos;
-    } catch (e) {}
+    } catch {}
   }
   function saveState() {
     localStorage.setItem(key, JSON.stringify({
@@ -76,7 +76,6 @@
       playlistPos: state.playlistPos
     }));
   }
-
   function fmt(sec) {
     if (!Number.isFinite(sec)) return '0:00';
     sec = Math.max(0, Math.floor(sec));
@@ -84,16 +83,12 @@
     const s = sec % 60;
     return `${m}:${String(s).padStart(2, '0')}`;
   }
-
-  function setStatus(text) {
-    els.statusLabel.textContent = text;
-  }
+  function setStatus(text) { els.statusLabel.textContent = text; }
 
   function renderLyrics(text) {
     const blocks = String(text || '').trim().split(/\n\s*\n/).filter(Boolean);
     els.lyricsText.innerHTML = blocks.map(x => `<p>${x.replace(/\n/g, '<br>')}</p>`).join('');
   }
-
   function updateTexts(track) {
     els.trackTitle.textContent = track.title;
     els.trackMood.textContent = track.mood;
@@ -106,51 +101,46 @@
     els.dockArtist.textContent = track.artist;
     renderLyrics(track.lyrics);
   }
-
-  function switchImage(imgEl, src) {
-    imgEl.classList.add('switching');
+  function switchImage(el, src) {
+    el.classList.add('switching');
     const pre = new Image();
     pre.onload = () => {
-      imgEl.src = src;
-      requestAnimationFrame(() => imgEl.classList.remove('switching'));
+      el.src = src;
+      requestAnimationFrame(() => el.classList.remove('switching'));
     };
     pre.onerror = () => {
-      imgEl.src = src;
-      imgEl.classList.remove('switching');
+      el.src = src;
+      el.classList.remove('switching');
     };
     pre.src = src;
   }
-
   function switchImages(track) {
     switchImage(els.bgImage, track.image);
     switchImage(els.coverImage, track.image);
   }
-
   function updateButtons() {
     els.playBtn.textContent = els.audio.paused ? '▶' : '❚❚';
     els.muteBtn.textContent = state.muted || els.audio.volume === 0 ? '🔇' : (els.audio.volume < 0.45 ? '🔉' : '🔊');
   }
-
   function updatePlaylistActive() {
-    els.playlistList.querySelectorAll('.playlist__button').forEach((btn, i) => btn.classList.toggle('active', i === state.index));
+    els.playlistList.querySelectorAll('.playlist-button').forEach((btn, i) => btn.classList.toggle('active', i === state.index));
   }
-
   function buildPlaylist() {
     els.playlistList.innerHTML = '';
     tracks.forEach((track, i) => {
       const li = document.createElement('li');
-      li.className = 'playlist__item';
+      li.className = 'playlist-item';
       const btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'playlist__button';
+      btn.className = 'playlist-button';
       btn.innerHTML = `
-        <img class="playlist__thumb" src="${track.image}" alt="">
-        <div class="playlist__meta">
-          <p class="playlist__num">track ${String(i + 1).padStart(2, '0')}</p>
-          <p class="playlist__title">${track.title}</p>
-          <p class="playlist__mood">${track.mood}</p>
+        <img class="playlist-thumb" src="${track.image}" alt="">
+        <div class="playlist-meta">
+          <p class="playlist-num">brano ${String(i + 1).padStart(2, '0')}</p>
+          <p class="playlist-title">${track.title}</p>
+          <p class="playlist-mood">${track.mood}</p>
         </div>
-        <span class="playlist__time">${fmt(track.duration_seconds || 0)}</span>
+        <span class="playlist-time">${fmt(track.duration_seconds || 0)}</span>
       `;
       btn.addEventListener('click', () => loadTrack(i, true));
       li.appendChild(btn);
@@ -168,19 +158,34 @@
     state.analyser.fftSize = 512;
     state.analyser.smoothingTimeConstant = 0.82;
     state.buffer = new Uint8Array(state.analyser.frequencyBinCount);
-    state.source = state.audioCtx.createMediaElementSource(els.audio);
-    state.source.connect(state.analyser);
-    state.analyser.connect(state.audioCtx.destination);
+    state.source = state.audio.createMediaElementSource ? null : null;
+  }
+  function ensureGraph() {
+    if (state.source) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    if (!state.audioCtx) state.audioCtx = new AC();
+    if (!state.analyser) {
+      state.analyser = state.audioCtx.createAnalyser();
+      state.analyser.fftSize = 512;
+      state.analyser.smoothingTimeConstant = 0.82;
+      state.buffer = new Uint8Array(state.analyser.frequencyBinCount);
+    }
+    if (!state.source) {
+      state.source = state.audioCtx.createMediaElementSource(els.audio);
+      state.source.connect(state.analyser);
+      state.analyser.connect(state.audioCtx.destination);
+    }
   }
 
   async function safePlay() {
     try {
-      initAudioGraph();
+      ensureGraph();
       if (state.audioCtx && state.audioCtx.state === 'suspended') await state.audioCtx.resume();
       await els.audio.play();
-      setStatus('Reproduciendo');
+      setStatus('In riproduzione');
     } catch (err) {
-      setStatus('Pulsa play para iniciar');
+      setStatus('Premi play per iniziare');
     }
     updateButtons();
     saveState();
@@ -199,7 +204,7 @@
     updateTexts(track);
     switchImages(track);
     updatePlaylistActive();
-    setStatus('Cargando…');
+    setStatus('Caricamento…');
 
     const restoreAt = Number(state.currentTimes[track.id] || 0);
     els.audio.pause();
@@ -210,13 +215,13 @@
       if (restoreAt > 0 && restoreAt < (els.audio.duration || Infinity)) {
         try { els.audio.currentTime = restoreAt; } catch (e) {}
       }
-      els.durationTime.textContent = fmt(els.audio.duration || 0);
+      els.durationTime.textContent = fmt(els.audio.duration || track.duration_seconds || 0);
       els.currentTime.textContent = fmt(els.audio.currentTime || 0);
       els.progressBar.value = els.audio.duration ? (els.audio.currentTime / els.audio.duration) * 100 : 0;
       els.audio.volume = state.volume;
       els.audio.muted = state.muted;
       updateButtons();
-      setStatus('Listo');
+      setStatus('Pronto');
       els.audio.removeEventListener('loadedmetadata', onMeta);
       if (autoplay) safePlay();
       saveState();
@@ -227,11 +232,7 @@
   function applyPlaylistVisibility() {
     els.playlistPanel.classList.toggle('hidden', state.playlistHidden);
   }
-
-  function defaultPlaylistPos() {
-    return { left: 20, top: 112 };
-  }
-
+  function defaultPlaylistPos() { return { left: 20, top: 112 }; }
   function applyPlaylistPosition() {
     if (window.innerWidth <= 980) {
       els.playlistPanel.style.left = '';
@@ -248,11 +249,8 @@
     els.playlistPanel.style.top = `${top}px`;
     state.playlistPos = { left, top };
   }
-
   function makePlaylistDraggable() {
-    let dragging = false;
-    let dx = 0, dy = 0;
-
+    let dragging = false, dx = 0, dy = 0;
     const start = (x, y) => {
       if (window.innerWidth <= 980) return;
       dragging = true;
@@ -260,7 +258,6 @@
       dx = x - rect.left;
       dy = y - rect.top;
     };
-
     const move = (x, y) => {
       if (!dragging) return;
       const rect = els.playlistPanel.getBoundingClientRect();
@@ -272,31 +269,13 @@
       els.playlistPanel.style.top = `${top}px`;
       state.playlistPos = { left, top };
     };
-
     const stop = () => { if (dragging) { dragging = false; saveState(); } };
-
     els.playlistHandle.addEventListener('mousedown', (e) => { start(e.clientX, e.clientY); e.preventDefault(); });
     document.addEventListener('mousemove', (e) => move(e.clientX, e.clientY));
     document.addEventListener('mouseup', stop);
-
-    els.playlistHandle.addEventListener('touchstart', (e) => {
-      const t = e.touches[0];
-      start(t.clientX, t.clientY);
-    }, { passive: true });
-    document.addEventListener('touchmove', (e) => {
-      const t = e.touches[0];
-      if (t) move(t.clientX, t.clientY);
-    }, { passive: true });
+    els.playlistHandle.addEventListener('touchstart', (e) => { const t = e.touches[0]; start(t.clientX, t.clientY); }, { passive: true });
+    document.addEventListener('touchmove', (e) => { const t = e.touches[0]; if (t) move(t.clientX, t.clientY); }, { passive: true });
     document.addEventListener('touchend', stop);
-
-    window.addEventListener('resize', () => {
-      if (!isDesktop()) {
-        panel.style.left = '';
-        panel.style.top = '';
-      } else {
-        applyPlaylistPosition();
-      }
-    });
   }
 
   function drawSpectrum() {
@@ -313,13 +292,12 @@
     ctx.clearRect(0, 0, width, height);
 
     if (!state.analyser || !state.buffer) {
-      // idle glow line
-      ctx.strokeStyle = 'rgba(56, 213, 222, 0.58)';
+      ctx.strokeStyle = 'rgba(61,214,223,.6)';
       ctx.lineWidth = 2 * dpr;
-      ctx.shadowColor = 'rgba(56, 213, 222, 0.9)';
+      ctx.shadowColor = 'rgba(61,214,223,.9)';
       ctx.shadowBlur = 18 * dpr;
       ctx.beginPath();
-      const baseY = height * 0.72;
+      const baseY = height * 0.74;
       for (let x = 0; x <= width; x += width / 24) {
         const y = baseY + Math.sin((x / width) * Math.PI * 3) * (height * 0.02);
         if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
@@ -332,11 +310,11 @@
     state.analyser.getByteFrequencyData(state.buffer);
     const points = 48;
     const step = Math.max(1, Math.floor(state.buffer.length / points));
-    const baseY = height * 0.72;
+    const baseY = height * 0.74;
 
-    ctx.strokeStyle = 'rgba(56, 213, 222, 0.98)';
+    ctx.strokeStyle = 'rgba(61,214,223,.98)';
     ctx.lineWidth = 3 * dpr;
-    ctx.shadowColor = 'rgba(56, 213, 222, 0.95)';
+    ctx.shadowColor = 'rgba(61,214,223,.95)';
     ctx.shadowBlur = 24 * dpr;
     ctx.beginPath();
 
@@ -356,9 +334,8 @@
     ctx.lineTo(width, baseY);
     ctx.stroke();
 
-    // soft fill under line
     ctx.shadowBlur = 0;
-    ctx.fillStyle = 'rgba(56, 213, 222, 0.14)';
+    ctx.fillStyle = 'rgba(61,214,223,.14)';
     ctx.lineTo(width, height);
     ctx.lineTo(0, height);
     ctx.closePath();
@@ -372,8 +349,8 @@
     els.prevBtn.addEventListener('click', () => loadTrack(state.index - 1, true));
     els.nextBtn.addEventListener('click', () => loadTrack(state.index + 1, true));
 
-    els.audio.addEventListener('play', () => { setStatus('Reproduciendo'); updateButtons(); saveState(); });
-    els.audio.addEventListener('pause', () => { setStatus('Pausado'); updateButtons(); saveState(); });
+    els.audio.addEventListener('play', () => { setStatus('In riproduzione'); updateButtons(); saveState(); });
+    els.audio.addEventListener('pause', () => { setStatus('In pausa'); updateButtons(); saveState(); });
     els.audio.addEventListener('timeupdate', () => {
       const t = tracks[state.index];
       if (t) state.currentTimes[t.id] = els.audio.currentTime || 0;
@@ -383,7 +360,7 @@
       saveState();
     });
     els.audio.addEventListener('ended', () => loadTrack(state.index + 1, true));
-    els.audio.addEventListener('error', () => setStatus('Error de audio'));
+    els.audio.addEventListener('error', () => setStatus('Errore audio'));
 
     els.progressBar.addEventListener('input', () => {
       if (!Number.isFinite(els.audio.duration)) return;
@@ -436,7 +413,6 @@
     els.volumeBar.value = String(state.volume);
     loadTrack(state.index, false);
 
-    // Try to resume only after user gesture if browser blocks autoplay.
     if (state.wantsPlay) {
       const resumeOnce = () => {
         safePlay();
