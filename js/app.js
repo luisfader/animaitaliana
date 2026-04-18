@@ -32,7 +32,9 @@
     focusBtn: $('focusBtn'),
     wideLyricsBtn: $('wideLyricsBtn'),
     togglePlaylistBtn: $('togglePlaylistBtn'),
-    collapsePlaylistBtn: $('collapsePlaylistBtn')
+    collapsePlaylistBtn: $('collapsePlaylistBtn'),
+    minimizePlayerBtn: $('minimizePlayerBtn'),
+    player: document.querySelector('.player')
   };
 
   const key = 'italian_mood_site_state_v4';
@@ -43,6 +45,7 @@
     currentTimes: {},
     wantsPlay: false,
     playlistHidden: false,
+    playerMinimized: false,
     playlistPos: null,
     audioCtx: null,
     analyser: null,
@@ -62,6 +65,7 @@
       if (s.currentTimes && typeof s.currentTimes === 'object') state.currentTimes = s.currentTimes;
       if (typeof s.wantsPlay === 'boolean') state.wantsPlay = s.wantsPlay;
       if (typeof s.playlistHidden === 'boolean') state.playlistHidden = s.playlistHidden;
+      if (typeof s.playerMinimized === 'boolean') state.playerMinimized = s.playerMinimized;
       if (s.playlistPos && typeof s.playlistPos === 'object') state.playlistPos = s.playlistPos;
     } catch {}
   }
@@ -73,6 +77,7 @@
       currentTimes: state.currentTimes,
       wantsPlay: !els.audio.paused && !els.audio.ended,
       playlistHidden: state.playlistHidden,
+      playerMinimized: state.playerMinimized,
       playlistPos: state.playlistPos
     }));
   }
@@ -344,6 +349,20 @@
     state.raf = requestAnimationFrame(drawSpectrum);
   }
 
+
+  function applyPlayerMinimized() {
+    if (window.innerWidth > 980) {
+      els.player.classList.remove('is-minimized');
+      if (els.minimizePlayerBtn) els.minimizePlayerBtn.textContent = '—';
+      return;
+    }
+    els.player.classList.toggle('is-minimized', state.playerMinimized);
+    if (els.minimizePlayerBtn) {
+      els.minimizePlayerBtn.textContent = state.playerMinimized ? '+' : '—';
+      els.minimizePlayerBtn.setAttribute('aria-label', state.playerMinimized ? 'Espandi player' : 'Riduci player');
+    }
+  }
+
   function attachEvents() {
     els.playBtn.addEventListener('click', () => els.audio.paused ? safePlay() : els.audio.pause());
     els.prevBtn.addEventListener('click', () => loadTrack(state.index - 1, true));
@@ -396,7 +415,18 @@
       saveState();
     });
 
-    window.addEventListener('resize', applyPlaylistPosition);
+    if (els.minimizePlayerBtn) {
+      els.minimizePlayerBtn.addEventListener('click', () => {
+        state.playerMinimized = !state.playerMinimized;
+        applyPlayerMinimized();
+        saveState();
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      applyPlaylistPosition();
+      applyPlayerMinimized();
+    });
   }
 
   function init() {
@@ -405,6 +435,7 @@
     attachEvents();
     makePlaylistDraggable();
     applyPlaylistVisibility();
+    applyPlayerMinimized();
     requestAnimationFrame(() => {
       applyPlaylistPosition();
       drawSpectrum();

@@ -436,92 +436,58 @@ body.focus .hero,body.focus .playlist{opacity:.36}
 }
 
 
-/* Mobile player fix v3 */
+/* Mobile player minimizable */
+.player-track{
+  justify-content: space-between;
+}
+.player-track > div{
+  min-width: 0;
+}
+.player-minimize-btn{
+  margin-left: auto;
+  flex: none;
+}
+.player.is-minimized .player-controls,
+.player.is-minimized .player-progress,
+.player.is-minimized .player-volume{
+  display: none;
+}
+
 @media (max-width: 980px){
-  :root{
-    --player-h: 220px;
-  }
   body{
-    padding-bottom: calc(var(--player-h) + 34px);
+    padding-bottom: 96px;
   }
   .player{
-    left: 14px;
-    right: 14px;
-    bottom: 12px;
-    padding: 14px 14px 16px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "track"
-      "controls"
-      "progress"
-      "volume";
+    padding: 10px 12px;
     gap: 10px;
+    transition: transform .2s ease, padding .2s ease, max-height .2s ease;
   }
   .player-track{
-    width: 100%;
-    min-width: 0;
-  }
-  .player-controls{
-    width: 100%;
-    justify-content: center;
     gap: 10px;
   }
-  .player-progress{
-    width: 100%;
-    grid-template-columns: 44px minmax(0,1fr) 44px;
-    gap: 8px;
+  .player-track .player-minimize-btn{
+    display: grid;
+    width: 38px;
+    height: 38px;
   }
-  .player-volume{
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    align-items: stretch;
+  .player.is-minimized{
+    left: 14px;
+    right: 14px;
+    padding: 8px 10px;
   }
-  .player-volume label{
-    display: block;
-    min-width: 0;
+  .player.is-minimized .player-track{
+    align-items: center;
   }
-  .player-volume .ui-btn.icon{
-    justify-self: end;
+  .player.is-minimized .player-track small{
+    display: none;
+  }
+  .player.is-minimized .player-track strong{
+    font-size: .94rem;
   }
 }
 
-@media (max-width: 680px){
-  :root{
-    --player-h: 236px;
-  }
-  body{
-    padding: 14px 14px calc(var(--player-h) + 26px);
-  }
-  .player{
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border-radius: 22px;
-    padding: 12px 12px 14px;
-    gap: 9px;
-  }
-  .player-track strong{
-    font-size: .95rem;
-  }
-  .player-track small{
-    font-size: .84rem;
-  }
-  .ui-btn.icon{
-    width: 42px;
-    height: 42px;
-  }
-  .ui-btn.play{
-    width: 56px;
-    height: 56px;
-    font-size: 1.08rem;
-  }
-  .player-progress{
-    grid-template-columns: 40px minmax(0,1fr) 40px;
-    gap: 6px;
-  }
-  .player-progress span,
-  .player-volume label{
-    font-size: .84rem;
+@media (min-width: 981px){
+  .player-minimize-btn{
+    display: none;
   }
 }
