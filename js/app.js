@@ -146,7 +146,7 @@
       btn.innerHTML = `
         <img class="playlist__thumb" src="${track.image}" alt="">
         <div class="playlist__meta">
-          <p class="playlist__num">track ${String(i + 1).padStart(2, '0')}</p>
+          <p class="playlist__num">brano ${String(i + 1).padStart(2, '0')}</p>
           <p class="playlist__title">${track.title}</p>
           <p class="playlist__mood">${track.mood}</p>
         </div>
@@ -178,9 +178,9 @@
       initAudioGraph();
       if (state.audioCtx && state.audioCtx.state === 'suspended') await state.audioCtx.resume();
       await els.audio.play();
-      setStatus('Reproduciendo');
+      setStatus('In riproduzione');
     } catch (err) {
-      setStatus('Pulsa play para iniciar');
+      setStatus('Premi play per iniziare');
     }
     updateButtons();
     saveState();
@@ -199,7 +199,7 @@
     updateTexts(track);
     switchImages(track);
     updatePlaylistActive();
-    setStatus('Cargando…');
+    setStatus('Caricamento…');
 
     const restoreAt = Number(state.currentTimes[track.id] || 0);
     els.audio.pause();
@@ -216,7 +216,7 @@
       els.audio.volume = state.volume;
       els.audio.muted = state.muted;
       updateButtons();
-      setStatus('Listo');
+      setStatus('Pronto');
       els.audio.removeEventListener('loadedmetadata', onMeta);
       if (autoplay) safePlay();
       saveState();
@@ -363,8 +363,8 @@
     els.prevBtn.addEventListener('click', () => loadTrack(state.index - 1, true));
     els.nextBtn.addEventListener('click', () => loadTrack(state.index + 1, true));
 
-    els.audio.addEventListener('play', () => { setStatus('Reproduciendo'); updateButtons(); saveState(); });
-    els.audio.addEventListener('pause', () => { setStatus('Pausado'); updateButtons(); saveState(); });
+    els.audio.addEventListener('play', () => { setStatus('In riproduzione'); updateButtons(); saveState(); });
+    els.audio.addEventListener('pause', () => { setStatus('In pausa'); updateButtons(); saveState(); });
     els.audio.addEventListener('timeupdate', () => {
       const t = tracks[state.index];
       if (t) state.currentTimes[t.id] = els.audio.currentTime || 0;
@@ -374,7 +374,7 @@
       saveState();
     });
     els.audio.addEventListener('ended', () => loadTrack(state.index + 1, true));
-    els.audio.addEventListener('error', () => setStatus('Error de audio'));
+    els.audio.addEventListener('error', () => setStatus('Errore audio'));
 
     els.progressBar.addEventListener('input', () => {
       if (!Number.isFinite(els.audio.duration)) return;

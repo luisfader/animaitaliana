@@ -1,11 +1,10 @@
-
 window.TRACKS = [
   {
     id: 'violoncello-fortezza',
     title: 'Il Violoncello nella Fortezza',
     artist: 'Luis Fader',
-    mood: 'epico · notturno · amor risorto',
-    description: 'Una apertura intensa entre muros antiguos, desierto y una promesa de amor que busca paz.',
+    mood: 'epico · notturno · amore risorto',
+    description: 'Un’apertura intensa tra mura antiche, deserto e una promessa d’amore che cerca pace.',
     image: 'assets/images/violoncello-fortezza.jpg',
     audio: 'assets/audio/violoncello-fortezza.mp3',
     lyrics: `Notte senza stelle,
@@ -77,8 +76,8 @@ noi siamo l’amore risorto.`
     id: 'pioggia-segreta',
     title: 'Pioggia Segreta',
     artist: 'Luis Fader',
-    mood: 'pioggia · enigma · melancolía',
-    description: 'Una confesión húmeda y oscura, donde cada gota parece esconder un mensaje.',
+    mood: 'pioggia · enigma · malinconia',
+    description: 'Una confessione umida e oscura, dove ogni goccia sembra nascondere un messaggio.',
     image: 'assets/images/pioggia-segreta.jpg',
     audio: 'assets/audio/pioggia-segreta.mp3',
     lyrics: `Cade la pioggia senza un perché
@@ -132,7 +131,7 @@ come un rimorso che non muore mai.`
     title: 'Onde d’amore',
     artist: 'Luis Fader',
     mood: 'luminoso · spirituale · vasto',
-    description: 'Una corriente de amor que atraviesa la noche y devuelve el pulso interior.',
+    description: 'Una corrente d’amore che attraversa la notte e restituisce il battito interiore.',
     image: 'assets/images/onde-amore.jpg',
     audio: 'assets/audio/onde-amore.mp3',
     lyrics: `Quando la notte ci avvolge
@@ -181,8 +180,8 @@ onde d'amore.`
     id: 'donna-misteriosa',
     title: 'Donna Misteriosa',
     artist: 'Luis Fader',
-    mood: 'notturno · onírico · misterioso',
-    description: 'La aparición de una figura imposible, mitad sueño y mitad destino.',
+    mood: 'notturno · onirico · misterioso',
+    description: 'L’apparizione di una figura impossibile, a metà tra sogno e destino.',
     image: 'assets/images/donna-misteriosa.jpg',
     audio: 'assets/audio/donna-misteriosa.mp3',
     lyrics: `La città si spegne, un altro giorno va
@@ -232,7 +231,7 @@ E poi sparisci con la luce.`
     title: 'Primavera',
     artist: 'Luis Fader',
     mood: 'colore · rinascita · speranza',
-    description: 'Un despertar luminoso frente al ruido del mundo.',
+    description: 'Un risveglio luminoso davanti al rumore del mondo.',
     image: 'assets/images/primavera.jpg',
     audio: 'assets/audio/primavera.mp3',
     lyrics: `Sento che il mondo è in fiamme,lo sento nel notiziario
@@ -283,8 +282,8 @@ Cosa vera.`
     id: 'sorrido-senza-paura',
     title: 'Sorrido senza paura',
     artist: 'Luis Fader',
-    mood: 'gioia · città · libertà',
-    description: 'Una afirmación luminosa: reír, cantar y no agachar la mirada.',
+    mood: 'gioia · libertà · città notturna',
+    description: 'Una dichiarazione luminosa contro il grigiore, con il sorriso come atto di libertà.',
     image: 'assets/images/sorrido-senza-paura.jpg',
     audio: 'assets/audio/sorrido-senza-paura.mp3',
     lyrics: `Cammino per le strade grigie,
@@ -347,46 +346,46 @@ Per noi...`
     id: 'tra-acque-silenzio',
     title: 'Tra le Acque e il Silenzio',
     artist: 'Luis Fader',
-    mood: 'acqua · bacio · rivelazione',
-    description: 'Un abrazo en la noche veneciana, donde el enigma se vuelve certeza.',
+    mood: 'intimo · rivelazione · quiete',
+    description: 'Un abbraccio sul bordo dell’acqua, dove il mistero si trasforma in pace.',
     image: 'assets/images/tra-acque-silenzio.jpg',
     audio: 'assets/audio/tra-acque-silenzio.mp3',
-    lyrics: `Sono stata una statua nel tempo cristallizzata
-Un faro spento, un segreto per l'onda custodita
-Poi il tuo sguardo, un terremoto di luce improvvisa
+    lyrics: `Sono stata una statua nel tempo cristallizzata  
+Un faro spento, un segreto per l'onda custodita  
+Poi il tuo sguardo, un terremoto di luce improvvisa  
 Ha incrinato il mio marmo, ha svelato la vita.
 
-Ora danzo sulla scia di una cometa perduta
-Sei il vento che smuove la mia polvere di stelle
-L'unico riflesso in questo specchio di gelo
+Ora danzo sulla scia di una cometa perduta  
+Sei il vento che smuove la mia polvere di stelle  
+L'unico riflesso in questo specchio di gelo  
 Che conosce il mio volto, che sa del mio cielo.
 
-Ho custodito notti più lunghe di secoli muti
-Una rosa d'albatro che mai si è dischiusa
-Le tue mani, una mappa di calore assoluto
+Ho custodito notti più lunghe di secoli muti  
+Una rosa d'albatro che mai si è dischiusa  
+Le tue mani, una mappa di calore assoluto  
 Hanno sciolto la brina, trovato la scusa.
 
-Ora danzo sulla scia di una cometa perduta
-Sei il vento che smuove la mia polvere di stelle
-L'unico riflesso in questo specchio di gelo
+Ora danzo sulla scia di una cometa perduta  
+Sei il vento che smuove la mia polvere di stelle  
+L'unico riflesso in questo specchio di gelo  
 Che conosce il mio volto, che sa del mio cielo.
 
-Il mio cuore era un labirinto sommerso e silente
-Un codice scritto con inchiostro di luna
-Tu, viandante senza bussola e senza ponente
+Il mio cuore era un labirinto sommerso e silente  
+Un codice scritto con inchiostro di luna  
+Tu, viandante senza bussola e senza ponente  
 Hai trovato il centro, non per caso, per fortuna.
 
-Ti stringo, enigma che non ha più bisogno d’essere sciolto
-Mio porto sicuro in un oceano di maschere
-Sei la rivelazione che non teme l’abisso
+Ti stringo, enigma che non ha più bisogno d’essere sciolto  
+Mio porto sicuro in un oceano di maschere  
+Sei la rivelazione che non teme l’abisso  
 L'amore che finalmente, dopo secoli, riesco a baciare.`
   },
   {
     id: 'sei-mia-ispirazione',
     title: 'Sei La Mia Ispirazione',
     artist: 'Luis Fader',
-    mood: 'musa · sogno · creazione',
-    description: 'La música nace de una presencia que aparece justo cuando la noche no deja dormir.',
+    mood: 'musa · notte · poesia',
+    description: 'Un canto alla figura che accende la musica e rimane viva nella poesia.',
     image: 'assets/images/sei-mia-ispirazione.jpg',
     audio: 'assets/audio/sei-mia-ispirazione.mp3',
     lyrics: `Nell'insonnia della notte,
@@ -406,6 +405,7 @@ Vieni, danzi tra le stelle,
 un sogno che non finisce,
 la tua voce è un vento caldo,
 che il mio cuore accende e dice...
+
 
 Sei la mia ispirazione,
 musica ed emozione,
@@ -429,110 +429,110 @@ vivi nella poesia.`
     id: 'tu-sei-mio-segreto',
     title: 'Tu Sei Il Mio Segreto',
     artist: 'Luis Fader',
-    mood: 'classico · segreto · devozione',
-    description: 'Una confesión elegante y callada, dicha casi al oído.',
+    mood: 'classico · segreto · passione trattenuta',
+    description: 'Un amore custodito come un tesoro, tra desiderio, silenzio e destino.',
     image: 'assets/images/tu-sei-mio-segreto.jpg',
     audio: 'assets/audio/tu-sei-mio-segreto.mp3',
-    lyrics: `Ho palazzi di luce,
-Castelli nel vento,
-Tesori nascosti
-Sotto terra d’argento.
+    lyrics: `Ho palazzi di luce,  
+Castelli nel vento,  
+Tesori nascosti  
+Sotto terra d’argento.  
 
-Ma tra tutte le ricchezze,
-Tra sogni e potere,
-Solo tu, solo tu
-Mi fai davvero vivere.
+Ma tra tutte le ricchezze,  
+Tra sogni e potere,  
+Solo tu, solo tu  
+Mi fai davvero vivere.  
 
-Tu sei il mio segreto,
-Quel nome che non dico mai,
-La voce che mi porto dentro,
-Che nessuno saprà mai.
+Tu sei il mio segreto,  
+Quel nome che non dico mai,  
+La voce che mi porto dentro,  
+Che nessuno saprà mai.  
 
-Tu sei il mio segreto,
-La mia gioia, il mio peccato,
-L’amore che non ha confini,
-Il destino che ho baciato.
+Tu sei il mio segreto,  
+La mia gioia, il mio peccato,  
+L’amore che non ha confini,  
+Il destino che ho baciato.  
 
-Posso avere il mondo,
-Fermare il tempo,
-Ma senza il tuo sguardo
-Non vale niente.
+Posso avere il mondo,  
+Fermare il tempo,  
+Ma senza il tuo sguardo  
+Non vale niente.  
 
-Perché sei la mia storia,
-La musica e il silenzio,
-L’unico vero tesoro
-Che batte nel mio sangue.
+Perché sei la mia storia,  
+La musica e il silenzio,  
+L’unico vero tesoro  
+Che batte nel mio sangue.  
 
-Tu sei il mio segreto,
-Quel nome che non dico mai,
-La voce che mi porto dentro,
-Che nessuno saprà mai.
+Tu sei il mio segreto,  
+Quel nome che non dico mai,  
+La voce che mi porto dentro,  
+Che nessuno saprà mai.  
 
-Tu sei il mio segreto,
-La mia gioia, il mio peccato,
-L’amore che non ha confini,
-Il destino che ho baciato.
+Tu sei il mio segreto,  
+La mia gioia, il mio peccato,  
+L’amore che non ha confini,  
+Il destino che ho baciato.  
 
-E se un giorno il vento
-Portasse via tutto,
-Resteresti tu,
-Solo tu,
-Il mio infinito.
+E se un giorno il vento  
+Portasse via tutto,  
+Resteresti tu,  
+Solo tu,  
+Il mio infinito.  
 
-Tu sei il mio segreto,
-L’unica verità,
-Per sempre mio,
+Tu sei il mio segreto,  
+L’unica verità,  
+Per sempre mio,  
 Anche se non mi avrai.`
   },
   {
     id: 'baci-fantasma',
     title: 'Baci Fantasma',
     artist: 'Luis Fader',
-    mood: 'ricordo · desiderio · nostalgia',
-    description: 'El beso que se fue, pero no desapareció del cuerpo.',
+    mood: 'ricordo · bacio · nostalgia',
+    description: 'Il ricordo di un bacio che non svanisce e continua a bruciare nel tempo.',
     image: 'assets/images/baci-fantasma.jpg',
     audio: 'assets/audio/baci-fantasma.mp3',
-    lyrics: `Fu un attimo, senza avviso,
-come un fulmine sulla pelle.
-Le sue labbra, un dolce incantesimo,
-ora vivono dentro a me.
+    lyrics: `Fu un attimo, senza avviso,  
+come un fulmine sulla pelle.  
+Le sue labbra, un dolce incantesimo,  
+ora vivono dentro a me.  
 
-Non seppi il nome, né la storia,
-solo il calore di quel lampo.
-E ora vivo in quella gloria
-che svanisce piano piano.
+Non seppi il nome, né la storia,  
+solo il calore di quel lampo.  
+E ora vivo in quella gloria  
+che svanisce piano piano.  
 
-Baci fantasma, sulla bocca,
-orme che il tempo non cancellò.
-Ombre di un fuoco che mi tocca,
-anche se lei se ne andò.
+Baci fantasma, sulla bocca,  
+orme che il tempo non cancellò.  
+Ombre di un fuoco che mi tocca,  
+anche se lei se ne andò.  
 
-Cerco il suo sguardo tra la gente,
-in ogni risata, in ogni voce.
-Ma il suo ricordo è solo un niente
-che torna sempre senza foce.
+Cerco il suo sguardo tra la gente,  
+in ogni risata, in ogni voce.  
+Ma il suo ricordo è solo un niente  
+che torna sempre senza foce.  
 
-Fu vero o solo il destino
-che giocò a farmi sognare?
-Un’illusione, un dolce vino
-che non mi fa andare avanti.
+Fu vero o solo il destino  
+che giocò a farmi sognare?  
+Un’illusione, un dolce vino  
+che non mi fa andare avanti.  
 
-Baci fantasma, sulla bocca,
-orme che il tempo non cancellò.
-Ombre di un fuoco che mi tocca,
-anche se lei se ne andò.
+Baci fantasma, sulla bocca,  
+orme che il tempo non cancellò.  
+Ombre di un fuoco che mi tocca,  
+anche se lei se ne andò.  
 
-E se un giorno il vento torna
-a portarmi il suo respiro,
-non lascerò che ancora…
+E se un giorno il vento torna  
+a portarmi il suo respiro,  
+non lascerò che ancora…  
 sfugga senza un nuovo delirio.`
   },
   {
     id: 'sotto-la-pioggia',
     title: 'Sotto la pioggia',
     artist: 'Luis Fader',
-    mood: 'tempesta · passione · apocalisse',
-    description: 'Amor total bajo la lluvia, la nieve y el fin del mundo.',
+    mood: 'tempesta · apocalisse · amore assoluto',
+    description: 'Un giuramento d’amore feroce, pronunciato sotto pioggia, neve e fine del mondo.',
     image: 'assets/images/sotto-la-pioggia.jpg',
     audio: 'assets/audio/sotto-la-pioggia.mp3',
     lyrics: `Sotto la pioggia che cade, che non cessa mai,

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Итальянское настроение</title>
-  <meta name="description" content="Sitio musical offline para escuchar, leer y cantar en italiano.">
+  <meta name="description" content="Sito musicale offline per ascoltare, leggere e cantare in italiano.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,10 +18,10 @@
       <div class="hero__text">
         <p class="eyebrow">universo musicale · offline · luis fader</p>
         <h1>Итальянское настроение</h1>
-        <p class="lead">Escuchar, leer y cantar. Cada canción abre una imagen distinta y el espectro late sobre la miniatura visual del track.</p>
+        <p class="lead">Ascolta, leggi e canta. Ogni brano apre un'immagine diversa e lo spettro audio pulsa sulla miniatura visiva del brano.</p>
       </div>
       <div class="hero__buttons">
-        <button id="focusBtn" class="btn">Modo focus</button>
+        <button id="focusBtn" class="btn">Modalità focus</button>
         <button id="togglePlaylistBtn" class="btn">Playlist</button>
       </div>
     </header>
@@ -30,15 +30,15 @@
       <section class="main-column">
         <article class="now glass">
           <div class="now__copy">
-            <p class="eyebrow">ahora suena</p>
+            <p class="eyebrow">in riproduzione</p>
             <h2 id="trackTitle">Il Violoncello nella Fortezza</h2>
             <p id="trackMood" class="mood"></p>
             <p id="trackDescription" class="description"></p>
           </div>
           <div class="meta-row">
             <div class="meta-pill"><span>artista</span><strong id="trackArtist">Luis Fader</strong></div>
-            <div class="meta-pill"><span>track</span><strong id="trackIndexLabel">01 / 11</strong></div>
-            <div class="meta-pill"><span>estado</span><strong id="statusLabel">Listo</strong></div>
+            <div class="meta-pill"><span>brano</span><strong id="trackIndexLabel">01 / 11</strong></div>
+            <div class="meta-pill"><span>stato</span><strong id="statusLabel">Pronto</strong></div>
           </div>
         </article>
 
@@ -46,9 +46,9 @@
           <div class="section-head">
             <div>
               <p class="eyebrow">testo</p>
-              <h3>Letra de la canción</h3>
+              <h3>Testo della canzone</h3>
             </div>
-            <button id="wideLyricsBtn" class="btn btn--small">Lectura amplia</button>
+            <button id="wideLyricsBtn" class="btn btn--small">Lettura ampia</button>
           </div>
           <div id="lyricsText" class="lyrics__content"></div>
         </article>
@@ -58,12 +58,12 @@
         <article class="visual glass">
           <div class="section-head section-head--tight">
             <div>
-              <p class="eyebrow">miniatura visual</p>
-              <h3>Imagen del track</h3>
+              <p class="eyebrow">miniatura visiva</p>
+              <h3>Immagine del brano</h3>
             </div>
           </div>
           <div class="visual__frame">
-            <img id="coverImage" src="assets/images/album-cover.jpg" alt="Imagen del track actual" class="visual__img">
+            <img id="coverImage" src="assets/images/album-cover.jpg" alt="Immagine del brano attuale" class="visual__img">
             <canvas id="spectrumCanvas" class="visual__spectrum"></canvas>
           </div>
           <div class="visual__labels">
@@ -79,9 +79,9 @@
     <div id="playlistHandle" class="playlist__header">
       <div>
         <p class="eyebrow">playlist</p>
-        <h3>11 canciones</h3>
+        <h3>11 canzoni</h3>
       </div>
-      <button id="collapsePlaylistBtn" class="btn btn--small">Ocultar</button>
+      <button id="collapsePlaylistBtn" class="btn btn--small">Nascondi</button>
     </div>
     <ol id="playlistList" class="playlist__list"></ol>
   </aside>
@@ -95,9 +95,9 @@
       </div>
     </div>
     <div class="player__controls">
-      <button id="prevBtn" class="btn btn--icon" aria-label="Anterior">⟨⟨</button>
-      <button id="playBtn" class="btn btn--play" aria-label="Play">▶</button>
-      <button id="nextBtn" class="btn btn--icon" aria-label="Siguiente">⟩⟩</button>
+      <button id="prevBtn" class="btn btn--icon" aria-label="Precedente">⟨⟨</button>
+      <button id="playBtn" class="btn btn--play" aria-label="Riproduci">▶</button>
+      <button id="nextBtn" class="btn btn--icon" aria-label="Successivo">⟩⟩</button>
     </div>
     <div class="player__progress">
       <span id="currentTime">0:00</span>
@@ -105,9 +105,9 @@
       <span id="durationTime">0:00</span>
     </div>
     <div class="player__volume">
-      <label for="volumeBar">Volumen</label>
+      <label for="volumeBar">Volume</label>
       <input id="volumeBar" type="range" min="0" max="1" value="0.9" step="0.01">
-      <button id="muteBtn" class="btn btn--icon" aria-label="Silencio">🔊</button>
+      <button id="muteBtn" class="btn btn--icon" aria-label="Silenzia">🔊</button>
     </div>
   </footer>
 
