@@ -228,5 +228,63 @@ Maschera e verità
 Ora non esistono più
 Se mi perdo dentro te
 Io mi perdo… ma sei tu`
+},
+  ,
+{
+  title: "La Donna nelle Ombre",
+  artist: "Roberto Fader",
+  mood: "Misterioso",
+  description: "Un amore sospeso tra sogno e realtà, tra nebbia e desiderio.",
+  image: "assets/images/donna_ombre.jpg",
+  audio: "assets/audio/donnaombre.mp3",
+  lyrics: `La Donna nelle Ombre
+
+Testo e musica di Roberto Fader
+
+Sei un fantasma d’amore,
+Mi hai rubato il cuore, senza dire perché.
+Hai cambiato il corso della mia vita,
+Ora sei qui, e non puoi più scappare da me.
+
+Ti vedo danzare tra le ombre della sera,
+E mi sento parte del tuo mondo ormai.
+Quando mi sfiori, la luce è una chimera,
+Ma io ti cercherò, sempre qui resterò.
+
+La donna nelle ombre, amore senza nome,
+Sei tu che mi porti dove il vento va.
+In gondola senza gondoliere,
+Con te mi perdo, ma non ho paura.
+Voglio amarti, farti mia,
+Anche se sei solo un sogno nella mia vita.
+
+Le tue mani son fredde come l’alba,
+Ma quando mi stringi, sento che esisto ancora.
+Il tempo si ferma, il mondo scompare,
+E insieme navighiamo verso un’altra dimora.
+
+Ti vedo danzare tra le ombre della sera,
+E mi sento parte del tuo mondo ormai.
+Quando mi sfiori, la luce è una chimera,
+Ma io ti cercherò, sempre qui resterò.
+
+La donna nelle ombre, amore senza nome,
+Sei tu che mi porti dove il vento va.
+In gondola senza gondoliere,
+Con te mi perdo, ma non ho paura.
+Voglio amarti, farti mia,
+Anche se sei solo un sogno nella mia vita.
+
+Forse un giorno svanirai,
+Come nebbia sul canal.
+Ma finché respiro io,
+Non ti lascerò andar via.
+
+La donna nelle ombre, amore senza nome,
+Sei tu che mi porti dove il vento va.
+In gondola senza gondoliere,
+Con te mi perdo, ma non ho paura.
+Voglio amarti, farti mia,
+Anche se sei solo un sogno nella mia vita.`
 }
 ];
