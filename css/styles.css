@@ -436,7 +436,7 @@ body.focus .hero,body.focus .playlist{opacity:.36}
 }
 
 
-/* Mobile player fix v2 */
+/* Mobile player fix v3 */
 @media (max-width: 980px){
   :root{
     --player-h: 220px;
@@ -445,92 +445,83 @@ body.focus .hero,body.focus .playlist{opacity:.36}
     padding-bottom: calc(var(--player-h) + 34px);
   }
   .player{
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
     padding: 14px 14px 16px;
-    row-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "track"
+      "controls"
+      "progress"
+      "volume";
+    gap: 10px;
   }
   .player-track{
+    width: 100%;
     min-width: 0;
   }
-  .player-track strong,
-  .player-track small{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .player-controls{
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
   }
   .player-progress{
+    width: 100%;
     grid-template-columns: 44px minmax(0,1fr) 44px;
+    gap: 8px;
   }
   .player-volume{
-    grid-template-columns: 58px minmax(0,1fr) 46px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .player-volume label{
+    display: block;
+    min-width: 0;
+  }
+  .player-volume .ui-btn.icon{
+    justify-self: end;
   }
 }
 
 @media (max-width: 680px){
   :root{
-    --player-h: 262px;
+    --player-h: 236px;
   }
   body{
-    padding-bottom: calc(var(--player-h) + 28px);
+    padding: 14px 14px calc(var(--player-h) + 26px);
   }
   .player{
     left: 10px;
     right: 10px;
     bottom: 10px;
+    border-radius: 22px;
     padding: 12px 12px 14px;
-    border-radius: 20px;
-    gap: 10px;
+    gap: 9px;
   }
-  .player-track{
-    width: 100%;
-    justify-content: flex-start;
+  .player-track strong{
+    font-size: .95rem;
   }
-  .player-controls{
-    width: 100%;
-    justify-content: center;
-    gap: 8px;
-  }
-  .player-progress{
-    width: 100%;
-    grid-template-columns: 40px minmax(0,1fr) 40px;
-    gap: 8px;
-  }
-  .player-volume{
-    width: 100%;
-    grid-template-columns: 54px minmax(0,1fr) 40px;
-    gap: 8px;
-  }
-  .player-volume label,
-  .player-progress span{
-    font-size: .82rem;
+  .player-track small{
+    font-size: .84rem;
   }
   .ui-btn.icon{
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
   }
   .ui-btn.play{
-    width: 54px;
-    height: 54px;
-    font-size: 1.05rem;
-  }
-}
-
-@media (max-width: 420px){
-  :root{
-    --player-h: 278px;
-  }
-  .player{
-    padding: 10px 10px 12px;
+    width: 56px;
+    height: 56px;
+    font-size: 1.08rem;
   }
   .player-progress{
-    grid-template-columns: 36px minmax(0,1fr) 36px;
+    grid-template-columns: 40px minmax(0,1fr) 40px;
     gap: 6px;
   }
-  .player-volume{
-    grid-template-columns: 48px minmax(0,1fr) 36px;
-    gap: 6px;
-  }
-  .player-volume label,
-  .player-progress span{
-    font-size: .78rem;
+  .player-progress span,
+  .player-volume label{
+    font-size: .84rem;
   }
 }
