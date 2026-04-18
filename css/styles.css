@@ -166,24 +166,118 @@ body.focus .layout { grid-template-columns: minmax(0, 1fr) 380px; }
   .player__volume { grid-area: volume; }
 }
 @media (max-width: 980px) {
-  body { padding-left: 14px; padding-right: 14px; }
+  :root { --player-h: 196px; }
+  body {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: calc(var(--player-h) + 32px);
+  }
   .layout { grid-template-columns: 1fr; }
   .visual-column { position: static; }
   .playlist {
-    position: static; width: 100%; max-height: none; margin: 20px auto 0; left: auto; top: auto;
+    position: static;
+    width: 100%;
+    max-height: none;
+    margin: 16px 0 0;
+    left: auto;
+    top: auto;
+    z-index: auto;
   }
+  .playlist__header { cursor: default; }
   .page { display: flex; flex-direction: column; }
   .player {
-    left: 14px; right: 14px; grid-template-columns: 1fr; gap: 12px;
-    grid-template-areas: none;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "track"
+      "controls"
+      "progress"
+      "volume";
+    gap: 10px;
+    padding: 14px;
   }
-  .player__controls, .player__progress, .player__volume { width: 100%; }
+  .player__track { grid-area: track; }
+  .player__controls {
+    grid-area: controls;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .player__controls .btn--icon,
+  .player__controls .btn--play {
+    width: 100%;
+    height: 52px;
+    border-radius: 18px;
+  }
+  .player__progress {
+    grid-area: progress;
+    width: 100%;
+    grid-template-columns: 44px 1fr 44px;
+    gap: 8px;
+  }
+  .player__volume {
+    grid-area: volume;
+    width: 100%;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+  }
+  .player__volume label {
+    font-size: .86rem;
+    white-space: nowrap;
+  }
 }
 @media (max-width: 680px) {
+  :root { --player-h: 212px; }
   .hero { padding: 20px; flex-direction: column; }
+  .hero__buttons { width: 100%; }
+  .hero__buttons .btn { flex: 1 1 0; }
   .now, .lyrics, .visual { padding: 18px; }
-  .lyrics__content { padding: 18px; font-size: 1.02rem; line-height: 1.85; min-height: 280px; }
-  .playlist__button { grid-template-columns: 56px minmax(0,1fr); }
+  .meta-row { gap: 10px; }
+  .meta-pill { flex: 1 1 calc(50% - 10px); min-width: 0; }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-head .btn { width: 100%; }
+  .lyrics__content {
+    padding: 18px;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    min-height: 280px;
+  }
+  .playlist__header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .playlist__header .btn { width: 100%; }
+  .playlist__button {
+    grid-template-columns: 56px minmax(0,1fr);
+    align-items: center;
+  }
   .playlist__time { display: none; }
-  .visual__frame { aspect-ratio: 1 / 1.2; }
+  .visual__frame { aspect-ratio: 1 / 1.16; }
+  .player { padding: 12px; }
+  .player__track { gap: 10px; }
+  .player__track strong { font-size: .96rem; }
+  .player__track small { font-size: .82rem; }
+  .player__volume label { display: none; }
+  .player__volume { grid-template-columns: 1fr auto; }
+  .btn { padding: 10px 14px; }
+}
+@media (max-width: 430px) {
+  :root { --player-h: 224px; }
+  .hero h1 { font-size: 2rem; }
+  .lead { font-size: .97rem; }
+  .player__controls .btn--icon,
+  .player__controls .btn--play {
+    height: 50px;
+    font-size: 1rem;
+  }
+  .player__progress {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 6px;
+  }
 }
