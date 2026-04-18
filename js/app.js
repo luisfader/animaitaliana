@@ -33,8 +33,7 @@
     wideLyricsBtn: $('wideLyricsBtn'),
     togglePlaylistBtn: $('togglePlaylistBtn'),
     collapsePlaylistBtn: $('collapsePlaylistBtn'),
-    minimizePlayerBtn: $('minimizePlayerBtn'),
-    player: document.querySelector('.player')
+    minimizePlayerBtn: $('minimizePlayerBtn')
   };
 
   const key = 'italian_mood_site_state_v4';
@@ -45,13 +44,13 @@
     currentTimes: {},
     wantsPlay: false,
     playlistHidden: false,
-    playerMinimized: false,
     playlistPos: null,
     audioCtx: null,
     analyser: null,
     source: null,
     buffer: null,
-    raf: 0
+    raf: 0,
+    playerMinimized: false
   };
 
   function loadState() {
@@ -351,16 +350,12 @@
 
 
   function applyPlayerMinimized() {
-    if (window.innerWidth > 980) {
-      els.player.classList.remove('is-minimized');
-      if (els.minimizePlayerBtn) els.minimizePlayerBtn.textContent = '—';
-      return;
-    }
-    els.player.classList.toggle('is-minimized', state.playerMinimized);
-    if (els.minimizePlayerBtn) {
-      els.minimizePlayerBtn.textContent = state.playerMinimized ? '+' : '—';
-      els.minimizePlayerBtn.setAttribute('aria-label', state.playerMinimized ? 'Espandi player' : 'Riduci player');
-    }
+    const player = document.querySelector('.player');
+    if (!player) return;
+    player.classList.toggle('minimized', state.playerMinimized);
+    document.body.classList.toggle('player-minimized', state.playerMinimized);
+    if (els.minimizePlayerBtn) els.minimizePlayerBtn.textContent = state.playerMinimized ? '+' : '—';
+    if (els.minimizePlayerBtn) els.minimizePlayerBtn.setAttribute('aria-label', state.playerMinimized ? 'Espandi lettore' : 'Riduci lettore');
   }
 
   function attachEvents() {
@@ -423,10 +418,7 @@
       });
     }
 
-    window.addEventListener('resize', () => {
-      applyPlaylistPosition();
-      applyPlayerMinimized();
-    });
+    window.addEventListener('resize', applyPlaylistPosition);
   }
 
   function init() {
