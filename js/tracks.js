@@ -118,5 +118,38 @@ window.TRACKS = [
     "image": "assets/images/amore_mio.jpg",
     "audio": "assets/audio/amoremio.mp3",
     "lyrics": "Amore mio\n\nQuando la notte avvolge il mondo,\nE la luna danza in cielo, alto e rotondo,\nCamminiamo insieme, mano nella mano,\nSotto un mare di stelle, noi due, lontani.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nLe ombre sussurrano storie d'amore,\nMentre danziamo al ritmo del cuore,\nOgni attimo è un sogno che resta,\nCon te al mio fianco, ogni paura è festa.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nE quando l'orizzonte si tinge di blu,\nPrometto che sempre sarò qui per te,\nIn questo viaggio, insieme, senza fretta,\nSotto le stelle, la vita è perfetta.\n\nOh, amore mio, nel silenzio parlo,\nOgni stella brilla, riflette il tuo sguardo,\nIn questo abbraccio, sento il tuo calore,\nSiamo due anime, un solo cuore.\n\nSotto le stelle, ci perderemo,\nIn un universo, solo noi saremo,\nFino all'ultima luce, rimarremo qui,\nIn questo sogno, siamo solo noi."
-  }
+  }, 
+  ,
+{
+  title: "Ti amo in silenzio",
+  artist: "Italiano Mood",
+  mood: "Romantico",
+  description: "Un amore che vive nel silenzio e nell’attesa.",
+  image: "assets/images/ti_amo_in_silenzio.jpg",
+  audio: "assets/audio/tiamoinsilenzio.mp3",
+  lyrics: `Ti amo in silenzio
+
+Ti amo in silenzio, ti adoro nel vento,
+Disegno i tuoi sguardi nel mio pensiero.
+Aspetto il momento, il tuo dolce invito,
+Sei luce nel cuore, sei tutto il mio abisso.
+
+E canto per te, donna senza confini,
+Brucio nei sogni, nei giorni infiniti.
+Sei fuoco che arde, sei l’onda del mare,
+E io resto qui, per te ad aspettare.
+
+Voli tra le nuvole, ma resti qui con me,
+Il tempo si ferma se hai il tuo pianto.
+Vorrei stringerti, ma resti un mistero,
+Un fiore d’inverno, un amore sincero.
+
+E canto per te, donna senza confini,
+Brucio nei sogni, nei giorni infiniti.
+Sei fuoco che arde, sei l’onda del mare,
+E io resto qui, per te ad aspettare.
+
+Ti amo in silenzio... ti adoro...
+Ti aspetto...`
+}
 ];
