@@ -103,7 +103,8 @@
     els.artArtist.textContent = track.artist;
     els.dockTitle.textContent = track.title;
     els.dockArtist.textContent = track.artist;
-    renderLyrics(track.lyrics);
+    if (window.Karaoke) window.Karaoke.setTrack(track);
+    else renderLyrics(track.lyrics);
   }
   function switchImage(el, src) {
     el.classList.add('switching');
@@ -131,6 +132,8 @@
   }
   function buildPlaylist() {
     els.playlistList.innerHTML = '';
+    const countEl = $('playlistCount');
+    if (countEl) countEl.textContent = `${tracks.length} canzoni`;
     tracks.forEach((track, i) => {
       const li = document.createElement('li');
       li.className = 'playlist-item';

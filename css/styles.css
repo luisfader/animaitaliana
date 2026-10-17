@@ -563,3 +563,67 @@ body.player-minimized{padding-bottom:96px}
   .player-progress{grid-template-columns: 1fr 38px; gap:8px}
   .player-progress #muteBtn{width:38px;height:38px}
 }
+
+/* ---------- Testo sincronizzato ---------- */
+.lyrics-content{position:relative}
+.lyrics-content.synced{
+  max-height:min(64vh,620px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  -webkit-mask-image:linear-gradient(transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%);
+          mask-image:linear-gradient(transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%);
+  padding-top:48px;
+  padding-bottom:40%;
+}
+.lyric-line{
+  border-radius:6px;
+  transition:color .4s ease, opacity .4s ease, text-shadow .4s ease;
+}
+.lyrics-content.synced .lyric-line{opacity:.5;cursor:pointer}
+.lyrics-content.synced .lyric-line:hover{opacity:.85}
+.lyrics-content.synced .lyric-line.sung{opacity:.68}
+.lyrics-content.synced .lyric-line.active{
+  opacity:1;
+  color:var(--accent-deep);
+  font-weight:600;
+  text-shadow:0 0 18px rgba(61,214,223,.65), 0 0 4px rgba(61,214,223,.45);
+  animation:lyric-glow 2.4s ease-in-out infinite alternate;
+}
+@keyframes lyric-glow{
+  from{text-shadow:0 0 12px rgba(61,214,223,.45), 0 0 3px rgba(61,214,223,.35)}
+  to{text-shadow:0 0 24px rgba(61,214,223,.8), 0 0 6px rgba(61,214,223,.55)}
+}
+@media (prefers-reduced-motion:reduce){
+  .lyrics-content.synced .lyric-line.active{animation:none}
+}
+
+/* Modo sincronizar (solo con ?sincronizar en la dirección) */
+.lyric-line.next-mark{background:rgba(61,214,223,.14);box-shadow:0 0 0 1px rgba(22,162,176,.35)}
+.sync-panel{
+  margin-bottom:14px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:var(--accent-soft);
+  border:1px dashed rgba(22,162,176,.45);
+  display:grid;
+  gap:10px;
+}
+.sync-panel p{margin:0;line-height:1.55}
+.sync-title{font-weight:700;color:var(--accent-deep)}
+.sync-help{font-size:.9rem;color:var(--muted)}
+.sync-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sync-count{font-size:.85rem;color:var(--muted-2);font-variant-numeric:tabular-nums}
+.sync-panel button[disabled]{opacity:.45;cursor:default}
+.sync-main{font-weight:700}
+.sync-panel > button{justify-self:start}
+.sync-out{
+  width:100%;
+  font:.82rem/1.5 ui-monospace,Menlo,Consolas,monospace;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.7);
+  color:var(--text);
+  resize:vertical;
+}
