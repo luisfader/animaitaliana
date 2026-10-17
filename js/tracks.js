@@ -229,7 +229,6 @@ Ora non esistono più
 Se mi perdo dentro te
 Io mi perdo… ma sei tu`
 },
-  ,
 {
   title: "La Donna nelle Ombre",
   artist: "Roberto Fader",
@@ -286,5 +285,15 @@ In gondola senza gondoliere,
 Con te mi perdo, ma non ho paura.
 Voglio amarti, farti mia,
 Anche se sei solo un sogno nella mia vita.`
-}
+},
+  {
+    "id": "ciao-amore",
+    "title": "Ciao, amore!",
+    "artist": "La donna in rosa",
+    "mood": "amore · contraddizione · attesa",
+    "description": "Ti aspetto e ti mando via: un amore che non si decide tra restare e partire.",
+    "image": "assets/images/ciao-amore.jpg",
+    "audio": "assets/audio/ciao-amore.mp3",
+    "lyrics": "Ti aspetto, ma quando arrivi mi pento,\na volte ti spio, a volte ti guardo,\na volte mi dispiace, non so cosa sento,\ne quando te ne vai, di nuovo ti aspetto.\nA volte ti cerco, a volte ti evito,\na volte il tuo amore mi sembra proibito.\nVorrei dirti basta, vorrei dirti addio,\nma quando sei lontano, ritorni nel cuore mio.\n\nE non so, non so perché,\nse ti voglio lontano o vicino a me.\nSei la mia gioia, sei la mia croce,\nsei quel silenzio che parla con la tua voce.\n\nCiao, amore! Come stai oggi?\nHai ancora il mio nome dentro i tuoi sogni?\nCiao, amore! Mi manchi, lo sai,\nma quando ritorni, non ti voglio mai.\nCiao, amore! Perché fai così?\nMi fai aspettare, poi resti qui.\nTi amo, ti odio, non so più cos'è,\nquesta strana follia che mi lega a te.\n\nA volte mi pento di averti aspettato,\naltre ringrazio il destino impazzito.\nA volte mi manchi da farmi impazzire,\naltre vorrei non sentirti più dire:\n«Amore, ritorno, non piangere più,\nla vita è più bella se ci sei tu».\nMa appena ti vedo, qualcosa non va,\nil cuore si chiude, la mente se ne va.\n\nE non so, non so perché,\nse ti voglio lontano o vicino a me.\nSei la mia gioia, sei la mia croce,\nsei quel silenzio che parla con la tua voce.\n\nCiao, amore! Come stai oggi?\nHai ancora il mio nome dentro i tuoi sogni?\nCiao, amore! Mi manchi, lo sai,\nma quando ritorni, non ti voglio mai.\nCiao, amore! Perché fai così?\nMi fai aspettare, poi resti qui.\nTi amo, ti odio, non so più cos'è,\nquesta strana follia che mi lega a te.\n\nA volte ti guardo senza parlare,\nvorrei abbracciarti, vorrei scappare.\nA volte mi fai tenerezza davvero,\naltre mi sembri un amore straniero.\nTi chiedo di andare, ti chiedo di restare,\nti dico di tutto, non so cosa fare.\nMi dici «Ti amo», ti credo per un po',\npoi torni a sorridere e non so più chi sono.\n\nForse domani ti dirò addio,\nforse domani sarai ancora mio.\nForse il tuo amore mi fa soffrire,\nma senza di te non so dove andare.\nE se una sera non tornerai,\nforse, amore, mi mancherai.\nMa se domani sarai qui con me,\ndirò ancora: «Vai via… resta con me!».\n\nCiao, amore! Come stai oggi?\nPerché mi sorridi e poi mi distruggi?\nCiao, amore! Non chiedermi perché,\nti chiudo la porta, ma sogno di te.\nCiao, amore! Che strana magia!\nTi mando via, ma sei sempre qui.\nTi amo, ti odio, non so più cos'è,\nquesta strana follia che mi lega a te.\nCiao, amore! Come stai oggi?\nMi pensi ancora? Mi cerchi nei sogni?\nCiao, amore! Ritorna da me,\nma quando ritorni… non so cosa c'è!\n\nCiao, amore…\nCome stai oggi?\nTi aspetto ancora…\nMa non venire…\nNo, aspetta…\nCiao, amore!"
+  }
 ];
